@@ -2,30 +2,7 @@
   <section class="container">
     <h1 class="title">Products</h1>
     <div class="products">
-      <nav class="left-sidebar">
-        <ul class="categories">
-          <li class="category">Електроніка
-            <ul>
-              <nuxt-link to="/products/laptops" class="sub-category">Ноутбуки</nuxt-link>
-              <nuxt-link to="/products/smart-phones" class="sub-category">Смартфони</nuxt-link>
-              <nuxt-link to="/products/televisions" class="sub-category">Телевізори</nuxt-link>
-            </ul>
-          </li>
-          <li class="category">Інструменти
-            <ul>
-              <nuxt-link to="/products/bulgarians" class="sub-category">Болгарки</nuxt-link>
-              <nuxt-link to="/products/screwdriver" class="sub-category">Шуруповерт</nuxt-link>
-            </ul>
-          </li>
-          <li class="category">Побутова техніка
-            <ul>
-              <nuxt-link to="/products/vacuum-cleaners" class="sub-category">Пилососи</nuxt-link>
-              <nuxt-link to="/products/refrigerators" class="sub-category">Холодильники</nuxt-link>
-              <nuxt-link to="/products/tiles" class="sub-category">Плитки</nuxt-link>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <LeftSidebar />
       <div class="product">
 
       </div>
@@ -34,8 +11,13 @@
 </template>
 
 <script>
+  import LeftSidebar from '@/components/LeftSidebar'
+
   export default {
-    name: "index.vue"
+    name: "index.vue",
+    components: {
+      LeftSidebar
+    }
   }
 </script>
 
@@ -60,18 +42,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .left-sidebar {
-      width: fit-content;
-      align-self: flex-start;
-      .categories {
-        padding: 0;
-        list-style: none;
-      }
-
-    }
     .product {
-      width: 75%;
-      background-color: green;
+      width: calc( 100% - 121px );
+      padding: 0 15px;
+      background-color: rgba(0,255,0,0.4);
       min-height: calc( 95vh - 75px );
     }
   }
